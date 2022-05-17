@@ -27,3 +27,4 @@ jobs:
       uses: docker/build-push-action@v3.0.0
       with:
         tags: ${{ steps.meta.outputs.tags }}
+        push: true
