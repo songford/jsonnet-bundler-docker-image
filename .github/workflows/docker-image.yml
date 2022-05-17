@@ -14,7 +14,16 @@ jobs:
       with:
         username: gluttonousolingo
         password: ${{ secrets.DOCKER_PASSWORD }}
+    - name: Docker Metadata action
+      uses: docker/metadata-action@v4.0.1
+      id: meta
+      with:
+        images: |
+          gluttonousolingo/jsonnet-bundler
+        tags: |
+          latest
+          type=sha
     - name: Build and push Docker images
       uses: docker/build-push-action@v3.0.0
       with:
-        tags: gluttonousolingo/jsonnet-bundler:${{github.sha}}
+        tags: ${{ steps.meta.outputs.tags }}
