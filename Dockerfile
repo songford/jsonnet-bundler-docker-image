@@ -9,4 +9,4 @@ RUN chmod u+x,g+x,o+x /usr/local/bin/tk
 RUN chmod u+x,g+x,o+x /usr/local/bin/jb
 
 USER 1001
-ENTRYPOINT ["/bin/bash"]
+CMD ["/bin/bash"]
