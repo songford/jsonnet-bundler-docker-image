@@ -17,4 +17,4 @@ jobs:
     - name: Build and push Docker images
       uses: docker/build-push-action@v3.0.0
       with:
-        tags: gluttonousolingo/jsonnet-bundler:${{env.GITHUB_SHA}}
+        tags: gluttonousolingo/jsonnet-bundler:${{github.sha}}
